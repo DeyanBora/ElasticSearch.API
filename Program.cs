@@ -175,7 +175,7 @@ app.MapPost("/products/bulkAdd", async (IList<ProductDto> request, CancellationT
 {
     var bulkRequest = new BulkRequest("products")
     {
-        Operations = new List<IBulkOperation>() // Start Operations 
+        Operations = new List<IBulkOperation>() // Start Operation (Without this list this doesnt work)
     };
 
     foreach (var productDto in request)
